@@ -12,8 +12,7 @@
     <author href="http://www.projectmaker.com.br" email="alfredo@projectmaker.com.br">
      Project Maker
     </author>
-
-    <gap:plugin name="Capture"/>
+ 
 	<gap:plugin name="com.phonegap.plugins.facebookconnect">
 		<param name="APP_ID" value="433825720048968" />
 		<param name="APP_NAME" value="Fotos do SuperLiveView" />
