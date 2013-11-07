@@ -14,7 +14,7 @@
     </author>
  
 	<gap:plugin name="com.phonegap.plugins.facebookconnect">
-		<param name="APP_ID" value="433825720048968" />
+		<param name="APP_ID" value="3a51af5bf207186b1b518d0990761c31" />
 		<param name="APP_NAME" value="Fotos do SuperLiveView" />
 	</gap:plugin>
 	
