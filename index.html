@@ -19,6 +19,7 @@
 		<script src="cordova.js"></script>
 	    <!-- cordova facebook plugin -->
 		<script src="cdv-plugin-fb-connect.js"></script>
+		<script type="text/javascript" src="appback.js"></script>
 	    <!-- facebook js sdk -->
 		<script src="facebook-js-sdk.js"></script>
         <script src="jquery.js"></script>
@@ -239,16 +240,10 @@
         function setAudioPosition(position) {
             document.getElementById('audio_position').innerHTML = position;
         }
+					
 			
-			
-			
-			
-			
-			
-			
-			
-            </script>
-			<script>
+		</script>
+		<script>
 			$(document).ready(function(){
 			
 				$.get("http://www.projectmaker.com.br/instantpress/json.php",function(data){
@@ -259,8 +254,7 @@
 						str += "<img onclick='shareFace(\""+a[0].img+"\")' src='"+a[0].img+"'/><br><br>";
 					});
 					$("#teste").html(str);
-				},"json");	
-				
+				},"json");					
 			});		 
 		</script>
         <div id="log"></div>
