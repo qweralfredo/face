@@ -256,11 +256,15 @@
 					});
 					$("#teste").html(str);
 				},"json");					
-			});		 
+			});	
+
+			function teste(){
+			 document.location = "https://accounts.google.com/logout";
+		   }			
 		</script>
         <div id="log"></div>
 		<div id="teste"></div><br><br><br>
-		<div class="g-plus" data-action="share"  data-href="http://www.projectmaker.com.br/instantpress/imagens/image11.jpg" ></div> 
+		<div class="g-plus" data-action="share"  data-onendinteraction="teste" data-href="http://www.projectmaker.com.br/instantpress/imagens/image11.jpg" ></div> 
 		<a href='javascript:playAudio("http:////centova.euroti.com.br:2199/tunein/radioex.pls");'>Tocar</a>
 		
 		
