@@ -144,15 +144,15 @@
 			    }
 			}
             
-            document.addEventListener('deviceready', function() {
-                                      try {
-                                      alert('Device is ready! Make sure you set your app_id below this alert.');
-                                      FB.init({ appId: "322792381122897", nativeInterface: CDV.FB, useCachedDialogs: false });
-                                      document.getElementById('data').innerHTML = "";
-                                      } catch (e) {
-                                      alert(e);
-                                      }
-                                      }, false);
+			document.addEventListener('deviceready', function() {
+			try {
+				alert('Device is ready! Make sure you set your app_id below this alert.');
+				FB.init({ appId: "322792381122897", nativeInterface: CDV.FB, useCachedDialogs: false });
+				document.getElementById('data').innerHTML = "";
+				} catch (e) {
+					alert(e);
+				}
+			}, false);
 			function shareFace(imagem){
 				var params = {
 				    method: 'feed',
@@ -245,8 +245,7 @@
 		</script>
 		<script src="https://apis.google.com/js/plusone.js"></script>
 		<script>
-			$(document).ready(function(){
-			
+			$(document).ready(function(){			
 				$.get("http://www.projectmaker.com.br/instantpress/json.php",function(data){
 					$("#teste").html("");
 					var str = "";
@@ -255,7 +254,9 @@
 						str += "<img onclick='shareFace(\""+a[0].img+"\")' src='"+a[0].img+"'/><br><br>";
 					});
 					$("#teste").html(str);
-				},"json");					
+				},"json").fail(function() {
+					alert( "error" );
+				  });					
 			});	
 
 			function teste(){
