@@ -249,6 +249,7 @@
 				$.get("http://www.projectmaker.com.br/instantpress/json.php",function(data){
 					$("#teste").html("");
 					var str = "";
+					alert(data);
 					$(data).each(function(i,j){
 						var a = $(j);
 						str += "<img onclick='shareFace(\""+a[0].img+"\")' src='"+a[0].img+"'/><br><br>";
