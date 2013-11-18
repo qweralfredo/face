@@ -248,10 +248,10 @@
 				$.get("http://www.projectmaker.com.br/instantpress/json.php",function(data){
 					$("#teste").html("");
 					var str = "";
-					alert(data);
+					
 					$(data).each(function(i,j){
 						var a = $(j);
-						str += "<img src='"+a[0].img+"'/><br><img src='bt-face.gif'>  <img  onclick='shareFace(\""+a[0].img+"\")'  src='email.gif'> <br><br>";
+						str += "<img src='"+a[0].img+"'/><br><img src='bt-face.gif'>  <a  href='javascript:shareFace(\""+a[0].img+"\")'> <img  src='email.gif'></a> <br><br>";
 					});
 					$("#teste").html(str);
 				},"json").fail(function() {
