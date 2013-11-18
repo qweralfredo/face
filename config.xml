@@ -19,7 +19,8 @@
 		<param name="APP_ID" value="322792381122897" />
 		<param name="APP_NAME" value="Projeckmaker APP" />
 	</gap:plugin>
-	 
+	  
+	<plugin name="Notification" value="org.apache.cordova.Notification"/>
 	
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/file"/>
