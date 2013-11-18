@@ -242,13 +242,24 @@
         }
 			
 		 // process the promptation dialog result
+		 var email = "";
+		 var img = "";
 		function onPrompt(results) {
-			alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+			//alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+			if(results.buttonIndex == 1){
+				email = results.input1;
+				$.get("http://www.projectmaker.com.br/instantpress/email.php?acao=enviar&img="+img,function(data){
+					alert(data.msg);					
+				},"json").fail(function() {
+					alert( "error" );
+				});
+			}		
 		}
 
 		// Show a custom prompt dialog
 		//
-		function showPrompt() {
+		function showPrompt(imgIn) {
+			img = imgIn;
 			navigator.notification.prompt(
 				'Insira o seu e-mail',  // message
 				onPrompt,                  // callback to invoke
