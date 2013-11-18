@@ -305,21 +305,21 @@
 									};
 									FB.api("/me/albums", 'post', criacao,function(r2){
 										albumId = r2.id;
-										console.log("Album criado "+albumId);
+										//console.log("Album criado "+albumId);
 									});
 								}else{
-									console.log("Album existente "+albumId);
+									//console.log("Album existente "+albumId);
 								}
 								
 								if(albumId.length >  0 ){
-								console.log(caminho);
+								//console.log(caminho);
 									var criacao = {
 										'url':caminho,
 										'message' : "mensagem"
 									};
 									
 									FB.api("/"+albumId+"/photos", 'post', criacao,function(r2){
-										console.log(r2.id); 
+										//console.log(r2.id); 
 									});
 								}
 							}				
