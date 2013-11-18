@@ -290,7 +290,7 @@
 			//var caminho = "http://www.projectmaker.com.br/instantpress/imagens/image11.jpg";
 			function shareFace2(caminho){
 				//FB.login(function(response){
-					if(response.status == "connected"){
+					//if(response.status == "connected"){
 						FB.api("me/albums",function(r){
 								albumId = "";
 								for(var i = 0; i < r.data.length; i++){
@@ -324,7 +324,7 @@
 								}
 							}				
 						)
-					}
+					//}
 				//},{scope:'read_stream,publish_stream,offline_access,user_photos,friends_photos,user_photo_video_tags,friends_photo_video_tags'});	
 			}		
 		</script>
