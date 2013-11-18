@@ -3,13 +3,13 @@
 	<head>
     </head>
 	<body>
-		<button onclick="logout()">Logout</button>
-		<!--<button onclick="login()">Login</button>
+		<button onclick="login()">Login</button>
 		<button onclick="me()">Me</button>
-		<button onclick="getSession()">Get session</button>-->
-		<!--<button onclick="getLoginStatus()">Get login</button>
+		<!--<button onclick="getSession()">Get session</button>-->
+		<button onclick="getLoginStatus()">Get login</button>
+		<button onclick="logout()">Logout</button>
 		<button onclick="facebookWallPost()">facebookWallPost</button>
-		<button onclick="publishStoryFriend()">friendstory</button>-->
+		<button onclick="publishStoryFriend()">friendstory</button>
         
         <div id="data">loading ...</div>
         
@@ -30,19 +30,19 @@
             if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
             
             FB.Event.subscribe('auth.login', function(response) {
-                              // alert('auth.login event');
+                               alert('auth.login event');
                                });
             
             FB.Event.subscribe('auth.logout', function(response) {
-                             //  alert('auth.logout event');
+                               alert('auth.logout event');
                                });
             
             FB.Event.subscribe('auth.sessionChange', function(response) {
-                             //  alert('auth.sessionChange event');
+                               alert('auth.sessionChange event');
                                });
             
             FB.Event.subscribe('auth.statusChange', function(response) {
-                             //  alert('auth.statusChange event');
+                               alert('auth.statusChange event');
                                });
             
             /*function getSession() {
@@ -52,9 +52,9 @@
             function getLoginStatus() {
                 FB.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
-                                //  alert('logged in');
+                                  alert('logged in');
                                   } else {
-                                //  alert('not logged in');
+                                  alert('not logged in');
                                   }
                                   });
             }
@@ -242,7 +242,8 @@
         }
 					
 			
-		</script> 
+		</script>
+		<script src="https://apis.google.com/js/plusone.js"></script>
 		<script>
 			$(document).ready(function(){			
 				$.get("http://www.projectmaker.com.br/instantpress/json.php",function(data){
@@ -251,17 +252,20 @@
 					alert(data);
 					$(data).each(function(i,j){
 						var a = $(j);
-						str += "<img src='"+a[0].img+"'/><br><img src='bt-face.gif'>  <img  onclick='shareFace(\""+a[0].img+"\")'  src='email.gif'> <br><br>";
+						str += "<img onclick='shareFace(\""+a[0].img+"\")' src='"+a[0].img+"'/><br><br>";
 					});
 					$("#teste").html(str);
 				},"json").fail(function() {
 					alert( "error" );
 				});				  
 			});	
-			 			
+			function teste(){
+			 document.location = "https://accounts.google.com/logout";
+		   }			
 		</script>
         <div id="log"></div>
-		<div id="teste"></div> 
-		
+		<div id="teste"></div><br><br><br>
+		<div class="g-plus" data-action="share"  data-onendinteraction="teste" data-href="http://www.projectmaker.com.br/instantpress/imagens/image11.jpg" ></div> 
+		<a href='javascript:playAudio("http://streaming19.brlogic.com:8004/live?type=.mp3&provider=http&volume=100&start=1&http.startparam=starttime&autostart=true&icons=false&skin=npl/brlogic-topo1.zip&duration=-1&bufferlength=5");'>Tocar</a>
 	</body>
 </html>
