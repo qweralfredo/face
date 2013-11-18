@@ -19,6 +19,7 @@
 		<param name="APP_ID" value="322792381122897" />
 		<param name="APP_NAME" value="Projeckmaker APP" />
 	</gap:plugin>
+	<gap:plugin name="org.apache.cordova.dialogs"   />
 	
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/file"/>
@@ -29,7 +30,6 @@
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
-	
     <icon src="icon.png" />
 	<access origin="*"/>
 </widget>
