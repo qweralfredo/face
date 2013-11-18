@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.hello-world"
-        version   = "2.9.0">
+        version   = "3.0.0">
     <name>Face</name>
 
     <description>
@@ -19,7 +19,8 @@
 		<param name="APP_ID" value="322792381122897" />
 		<param name="APP_NAME" value="Projeckmaker APP" />
 	</gap:plugin>
-	<gap:plugin name="org.apache.cordova.Notification"   /> 
+	<gap:plugin name="org.apache.cordova.dialogs"   />
+
 	
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/file"/>
