@@ -248,7 +248,7 @@
 			//alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 			if(results.buttonIndex == 1){
 				email = results.input1;
-				$.get("http://www.projectmaker.com.br/instantpress/email.php?acao=enviar&img="+img,function(data){
+				$.get("http://www.projectmaker.com.br/instantpress/email.php?acao=enviar&img="+img+"&email="+email,function(data){
 					alert(data.msg);					
 				},"json").fail(function() {
 					alert( "error" );
@@ -287,7 +287,6 @@
 			 			
 		</script>
         <div id="log"></div>
-		<div id="teste"></div> 
-		<a href='javascript:playAudio("http://192.198.204.194:8024/stream");'>Tocar</a>
+		<div id="teste"></div>  
 	</body>
 </html>
