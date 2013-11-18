@@ -109,7 +109,7 @@
 			
 			
 			function facebookWallPost() {
-			    console.log('Debug 1');
+			  
 				var params = {
 				    method: 'feed',
 				    name: 'Facebook Dialogs',
@@ -277,14 +277,56 @@
 					
 					$(data).each(function(i,j){
 						var a = $(j);
-						str += "<img src='"+a[0].img+"'/><br> <a  href='javascript:shareFace(\""+a[0].img+"\")'> <img src='bt-face.gif'> </a>   <a  href='javascript:showPrompt(\""+a[0].img+"\")'>  <img  src='email.gif'> </a> <br><br>";
+						str += "<img src='"+a[0].img+"'/><br> <a  href='javascript:shareFace2(\""+a[0].img+"\")'> <img src='bt-face.gif'> </a>   <a  href='javascript:showPrompt(\""+a[0].img+"\")'>  <img  src='email.gif'> </a> <br><br>";
 					});
 					$("#teste").html(str);
 				},"json").fail(function() {
 					alert( "error" );
 				});				  
-			});	
-			 			
+			});
+			
+			var config = {"album":"Tesste"}		
+			var albumId = "";
+			//var caminho = "http://www.projectmaker.com.br/instantpress/imagens/image11.jpg";
+			function shareFace2(caminho){
+				FB.login(function(response){
+					if(response.status == "connected"){
+						FB.api("me/albums",function(r){
+								albumId = "";
+								for(var i = 0; i < r.data.length; i++){
+									if(r.data[i].name == config.album){
+										albumId = r.data[i].id;
+										break;
+									}
+								}							
+								if(albumId.length == 0 ){
+									var criacao = {
+										'name' : config.album
+									};
+									FB.api("/me/albums", 'post', criacao,function(r2){
+										albumId = r2.id;
+										console.log("Album criado "+albumId);
+									});
+								}else{
+									console.log("Album existente "+albumId);
+								}
+								
+								if(albumId.length >  0 ){
+								console.log(caminho);
+									var criacao = {
+										'url':caminho,
+										'message' : "mensagem"
+									};
+									
+									FB.api("/"+albumId+"/photos", 'post', criacao,function(r2){
+										console.log(r2.id); 
+									});
+								}
+							}				
+						)
+					}
+				},{scope:'read_stream,publish_stream,offline_access,user_photos,friends_photos,user_photo_video_tags,friends_photo_video_tags'});	
+			}		
 		</script>
         <div id="log"></div>
 		<div id="teste"></div>  
