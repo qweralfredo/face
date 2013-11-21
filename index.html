@@ -322,12 +322,19 @@
 											};
 											
 											FB.api("/"+albumId+"/photos", 'post', criacao,function(r22){
-												//console.log(r2.id); 
+												console.log(r22.id); 
 											});
 										}
 									});
 								}else{
-									//console.log("Album existente "+albumId);
+									var criacao = {
+										'url':caminho,
+										'message' : "mensagem"
+									};
+									
+									FB.api("/"+albumId+"/photos", 'post', criacao,function(r22){
+										console.log(r22.id); 
+									});
 								}
 							}				
 						)
