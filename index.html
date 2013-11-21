@@ -118,7 +118,6 @@
 				    caption: 'Reference Documentation',
 				    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
 				  };
-				console.log(params);
 			    FB.ui(params, function(obj) { console.log(obj);});
 			}
             
@@ -155,7 +154,7 @@
 			}, false);
 			function shareFace(imagem){
 				var params = {
-				    method: 'feed',
+				    method: 'post',
 				    name: 'Teste',
 				    //link: imagem,
 				    picture: imagem,
