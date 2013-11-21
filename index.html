@@ -162,10 +162,19 @@
 				    description: 'texto'
 				  };
 				console.log(params);
-			    FB.ui(params, function(obj) { console.log(obj);});
+			    //FB.ui(params, function(obj) { console.log(obj);});
+				
+				
+				var criacao = {
+					'url':caminho,
+					'message' : "mensagem"
+				};
+				
+				FB.api("/me/photos", 'post', criacao,function(r2){
+					//console.log(r2.id); 
+				});
 			}
-			
-			
+		 
 			
 			// Audio player
         //
