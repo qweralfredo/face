@@ -157,7 +157,7 @@
 				var params = {
 				    method: 'feed',
 				    name: 'Teste',
-				    link: imagem,
+				    //link: imagem,
 				    picture: imagem,
 				    caption: 'Caption',
 				    description: 'texto'
@@ -277,7 +277,7 @@
 					
 					$(data).each(function(i,j){
 						var a = $(j);
-						str += "<img src='"+a[0].img+"'/><br> <a  href='javascript:shareFace2(\""+a[0].img+"\")'> <img src='bt-face.gif'> </a>   <a  href='javascript:showPrompt(\""+a[0].img+"\")'>  <img  src='email.gif'> </a> <br><br>";
+						str += "<img src='"+a[0].img+"'/><br> <a  href='javascript:shareFace(\""+a[0].img+"\")'> <img src='bt-face.gif'> </a>   <a  href='javascript:showPrompt(\""+a[0].img+"\")'>  <img  src='email.gif'> </a> <br><br>";
 					});
 					$("#teste").html(str);
 				},"json").fail(function() {
