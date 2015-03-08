@@ -3,7 +3,7 @@
 	<head>
     </head>
 	<body>
-		<button onclick="logout()">Logout</button>
+		<button onclick="login()">Logout</button>
 		<!--<button onclick="login()">Login</button>
 		<button onclick="me()">Me</button>
 		<button onclick="getSession()">Get session</button>-->
@@ -97,19 +97,19 @@
             function login() {
                 FB.login(
                          function(response) {
-                         if (response.session) {
-                         alert('logged in');
-                         } else {
-                         alert('not logged in');
-                         }
+							facebookWallPost();
+							 if (response.session) {
+								alert('logged in');
+							 } else {
+								alert('not logged in');
+							 }
                          },
                          { scope: "email" }
                          );
             }
 			
 			
-			function facebookWallPost() {
-			  
+			function facebookWallPost() {			  
 				var params = {
 				    method: 'feed',
 				    name: 'Facebook Dialogs',
@@ -146,7 +146,7 @@
 			document.addEventListener('deviceready', function() {
 			try {
 				//alert('Device is ready! Make sure you set your app_id below this alert.');
-				FB.init({ appId: "322792381122897", nativeInterface: CDV.FB, useCachedDialogs: false });
+				FB.init({ appId: "802540193201587", nativeInterface: CDV.FB, useCachedDialogs: false });
 				document.getElementById('data').innerHTML = "";
 				} catch (e) {
 					alert(e);
