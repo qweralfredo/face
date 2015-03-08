@@ -322,7 +322,8 @@
 											};
 											
 											FB.api("/"+albumId+"/photos", 'post', criacao,function(r22){
-												console.log(r22.id); 
+												//console.log(r22.id); 
+												FB.logout(function(r){alert(r)});
 											});
 										}
 									});
@@ -333,7 +334,8 @@
 									};
 									
 									FB.api("/"+albumId+"/photos", 'post', criacao,function(r22){
-										console.log(r22.id); 
+										//console.log(r22.id); 
+										FB.logout(function(r){alert(r)});
 									});
 								}
 							}				

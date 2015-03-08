@@ -16,8 +16,8 @@
       <param name="android-package" value="com.red_folder.phonegap.plugin.backgroundservice.BackgroundServicePlugin"/>
     </feature>
 	<gap:plugin name="com.phonegap.plugins.facebookconnect">
-		<param name="APP_ID" value="322792381122897" />
-		<param name="APP_NAME" value="Projeckmaker APP" />
+		<param name="APP_ID" value="802540193201587" />
+		<param name="APP_NAME" value="APPS" />
 	</gap:plugin>
 	<gap:plugin name="org.apache.cordova.dialogs"   />
 
